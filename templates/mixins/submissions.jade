@@ -1,0 +1,38 @@
+mixin submission-form(action)
+	form(method='post', style="margin-bottom: 40px; margin-top: 40px;")
+		input(type='hidden', name='action', value='submission.create')
+		.media
+			.media-body
+				input(name='name', type='text' placeholder='Name' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='realName', type='text' placeholder='Is this your real name?' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='location', type='text' placeholder='Where' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='age', type='text' placeholder='Age' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='email', type='text' placeholder='Email' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='thing1', type='text' placeholder='1?' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='thing2', type='text' placeholder='2?' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='thing3', type='text' placeholder='3?' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='thing4', type='text' placeholder='4?' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='thing5', type='text' placeholder='5?' style="margin-bottom: 10px; resize: vertical;").form-control
+				
+				button(type='submit').btn.btn-primary Post Submission
+				
+
+mixin submission(submission)
+	div.result_header
+		div.result_name #{submission.name}, #{submission.age}
+		div.result_social
+			ul.sclnav
+			li.twit 
+				a(href="#1") twitter
+			li.fcbk 
+				a(href="#2") facebook
+			li.plus 
+				a(href="#3") goolge
+	div.result_location #{submission.location}
+	div.result_answers
+		ul
+			li #{submission.thing1}
+			li #{submission.thing2}
+			li #{submission.thing3}
+			li #{submission.thing4}
+			li #{submission.thing5}
