@@ -6,9 +6,9 @@ mixin submission-form(action)
 				label name
 				input(name='name', type='text' placeholder='We can be on a first name basis.' style="margin-bottom: 10px; resize: vertical;").form-control
 				label is this your real name?				
-				input(type="radio", name="realName", value="1" checked=realName=="yes").form-control
+				input(type="radio", name="realName", value="1" ).form-control
 				label Yes
-				input(type="radio", name="realName", value="0" checked=realName=="no").form-control
+				input(type="radio", name="realName", value="0" ).form-control
 				label No
 				label Where
 				input(name='location', type='text' placeholder='City, State, Country' style="margin-bottom: 10px; resize: vertical;").form-control
@@ -26,7 +26,8 @@ mixin submission-form(action)
 				label 4
 				input(name='thing4', type='text' placeholder='4?' style="margin-bottom: 10px; resize: vertical;").form-control
 				label 5
-				input(name='thing5', type='text' placeholder='5?' style="margin-bottom: 10px; resize: vertical;").form-control				
+				input(name='thing5', type='text' placeholder='5?' style="margin-bottom: 10px; resize: vertical;").form-control
+
 				button(type='submit').btn.btn-primary Post Submission
 				
 

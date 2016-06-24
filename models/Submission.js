@@ -12,10 +12,10 @@ var Submission = new keystone.List('Submission', {
 
 Submission.add({
 	name: { type: String, initial: true, index: true },
-	realName: { type: Types.Select, options: ['Yes', 'No'], default: 'published', index: true },
+	realName: { type: Types.Select, numeric: true, options: [{ value: 1, label: 'Yes' }, { value: 0, label: 'No' }], index: true },
 	location: { type: String, initial: true, index: true },
 	age: { type: String, initial: true, index: true },
-	email: { { type: Types.Email, displayGravatar: false, initial: true, index: true  },
+	email: { type: Types.Email, displayGravatar: false, initial: true, index: true  },
 	state: { type: Types.Select, options: ['published', 'draft', 'archived'], default: 'published', index: true },
 	publishedOn: { type: Types.Date, default: Date.now, noedit: true, index: true },
 });
