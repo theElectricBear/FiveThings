@@ -12,7 +12,6 @@ var keystone = require('keystone');
 keystone.init({
 	'name': '5Things',
 	'brand': '5Things',
-	'port': 3000,
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
