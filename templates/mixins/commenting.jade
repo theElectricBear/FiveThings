@@ -1,18 +1,32 @@
-mixin comment-form(action)
+mixin comment-form(action, id)
 	form(method='post', style="margin-bottom: 40px; margin-top: 40px;")
 		input(type='hidden', name='action', value='comment.create')
-		.media
-			.media-body
-				input(name='name', type='text' placeholder='Name' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='realName', type='text' placeholder='Is this your real name?' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='location', type='text' placeholder='Where' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='age', type='text' placeholder='Age' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='email', type='text' placeholder='Email' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='thing1', type='text' placeholder='1?' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='thing2', type='text' placeholder='2?' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='thing3', type='text' placeholder='3?' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='thing4', type='text' placeholder='4?' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='thing5', type='text' placeholder='5?' style="margin-bottom: 10px; resize: vertical;").form-control
-				
-				button(type='submit').btn.btn-primary Post Comment
+		input(type='hidden', name='action', value=id)
+		input(name='content', type='text' placeholder='Comment here...' style="margin-bottom: 10px; resize: vertical;").form-control
 
+		button(type='submit').btn.btn-primary Post Comment
+
+mixin comment-post(comment)
+	if comment.author
+		div(id='comment-id-' + comment.id, style="margin-top: 20px;")
+			.media
+				.pull-left
+					img(src=comment.author.photo.exists ? comment.author._.photo.thumbnail(80,80) : 'http://placehold.it/80x80', alt=comment.author.name.full, width=80, height=80).img-rounded
+				.media-body
+					p
+						strong= comment.author.name.full
+						if user && user.id === comment.author.id
+							|  &middot; 
+							a(href='?remove=comment&comment=' + comment.id, title='Delete this comment', rel='tooltip', data-placement='left').comment-delete.js-delete-confirm Delete
+					p=comment.content.replace(/\n/g, '<br>')
+
+mixin comment-thread(comments)
+	if comments.length
+		for comment in comments
+			+comment-post(comment)
+
+mixin comment-modal()
+	#myModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+		.modal-dialog
+			.modal-content
+				+comment-form(action, 555666)

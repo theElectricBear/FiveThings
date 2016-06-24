@@ -3,9 +3,9 @@ mixin submission-form(action)
 		input(type='hidden', name='action', value='submission.create')
 		.media
 			.media-body
-				label name
+				label Name
 				input(name='name', type='text' placeholder='We can be on a first name basis.' style="margin-bottom: 10px; resize: vertical;").form-control
-				label is this your real name?				
+				p Is this your real name?				
 				input(type="radio", name="realName", value="1" ).form-control
 				label Yes
 				input(type="radio", name="realName", value="0" ).form-control
@@ -16,7 +16,7 @@ mixin submission-form(action)
 				input(name='age', type='text' placeholder='Age' style="margin-bottom: 10px; resize: vertical;").form-control
 				label Email
 				input(name='email', type='text' placeholder='Just in case I have questions' style="margin-bottom: 10px; resize: vertical;").form-control
-				label Your five things...
+				p Your five things...
 				label 1
 				input(name='thing1', type='text' placeholder='1?' style="margin-bottom: 10px; resize: vertical;").form-control
 				label 2
@@ -43,6 +43,8 @@ mixin submission(submission)
 						a(href="#2")
 					li.plus 
 						a(href="#3")
+				a.btn.btn-primary.btn-lg(href="#myModal", data-toggle="modal") &plus;
+				p.comment-count comments:1
 		div.result_location #{submission.location}
 		div.result_answers
 			ul

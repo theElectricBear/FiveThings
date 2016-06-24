@@ -11,6 +11,7 @@ block content
 		.container: .row
 			section.col-xs-12.col-sm-5.col-md-5.submission
 				.header
+				p Please tell me five things about yourself thatyou like. I can't time you, but I'd prefer if youdid this in under a minute. Life is busy.
 				+submission-form()
 			section.col-xs-12.col-sm-6.col-md-6.col-sm-offset-1.results
 				.header
@@ -41,7 +42,7 @@ block content
 							li: a(href='?page=' + data.submissions.next): span.glyphicon.glyphicon-chevron-right
 						else
 							li.disabled: a(href='?page=' + data.submissions.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
-				
+	+comment-modal()				
 
 block js
 	script.
