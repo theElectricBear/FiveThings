@@ -43,15 +43,11 @@ html
 
 			div(role="navigation").navbar.navbar-default
 				.container-fluid
-					.navbar-header
-						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-							span.sr-only Toggle navigation
-							span.icon-bar
-							span.icon-bar
-							span.icon-bar
+					.navbar-header.col-sm-9
+						
 						a.navbar-brand(href='/') 5Things
-					.collapse.navbar-collapse
-						ul.nav.navbar-nav.navbar-left
+					.col-sm-3
+						ul.nav.navbar-nav.navbar-right
 							each link in navLinks
 								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 		//- BODY
@@ -75,8 +71,7 @@ html
 		//- FOOTER
 		.container: #footer
 
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+			p &#169; 2012 5. things about yourself // website by Katrina Hess
 
 
 		//- JAVASCRIPT

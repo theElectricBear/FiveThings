@@ -9,10 +9,10 @@ block content
 	.container: .jumbotron
 		//-submissions
 		.container: .row
-			section.col-xs-12.col-sm-5.col-md-5.submission
+			section.col-sm-6.submission
 				.header
 				+submission-form()
-			section.col-xs-12.col-sm-6.col-md-6.col-sm-offset-1.results
+			section.col-sm-6.results
 				.header
 				if data.submissions.results.length
 					if data.submissions.totalPages > 1
@@ -27,7 +27,6 @@ block content
 						h4.text-weight-normal Showing #{utils.plural(data.submissions.results.length, '* submission')}.
 				each submission in data.submissions.results
 					+submission(submission)
-							
 				if data.submissions.totalPages > 1
 					ul.pagination
 						if data.submissions.previous

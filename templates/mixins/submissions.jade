@@ -1,8 +1,9 @@
 mixin submission-form(action)
-	form(method='post', style="margin-bottom: 40px; margin-top: 40px;")
+	form(method='post', style="margin-bottom: 40px;")
 		input(type='hidden', name='action', value='submission.create')
 		.media
 			.media-body
+				label name
 				input(name='name', type='text' placeholder='Name' style="margin-bottom: 10px; resize: vertical;").form-control
 				input(name='realName', type='text' placeholder='Is this your real name?' style="margin-bottom: 10px; resize: vertical;").form-control
 				input(name='location', type='text' placeholder='Where' style="margin-bottom: 10px; resize: vertical;").form-control
@@ -18,21 +19,22 @@ mixin submission-form(action)
 				
 
 mixin submission(submission)
-	div.result_header
-		div.result_name #{submission.name}, #{submission.age}
-		div.result_social
-			ul.sclnav
-			li.twit 
-				a(href="#1") twitter
-			li.fcbk 
-				a(href="#2") facebook
-			li.plus 
-				a(href="#3") goolge
-	div.result_location #{submission.location}
-	div.result_answers
-		ul
-			li #{submission.thing1}
-			li #{submission.thing2}
-			li #{submission.thing3}
-			li #{submission.thing4}
-			li #{submission.thing5}
+	div.result
+		div.result_header
+			div.result_name #{submission.name}, #{submission.age}
+			div.result_social
+				ul.sclnav
+					li.twit 
+						a(href="#1")
+					li.fcbk 
+						a(href="#2")
+					li.plus 
+						a(href="#3")
+		div.result_location #{submission.location}
+		div.result_answers
+			ul
+				li 1. #{submission.thing1}
+				li 2. #{submission.thing2}
+				li 3. #{submission.thing3}
+				li 4. #{submission.thing4}
+				li 5. #{submission.thing5}
