@@ -4,17 +4,29 @@ mixin submission-form(action)
 		.media
 			.media-body
 				label name
-				input(name='name', type='text' placeholder='Name' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='realName', type='text' placeholder='Is this your real name?' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='location', type='text' placeholder='Where' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='name', type='text' placeholder='We can be on a first name basis.' style="margin-bottom: 10px; resize: vertical;").form-control
+				label is this your real name?				
+				input(type="radio", name="realName", value="1" checked=realName=="yes").form-control
+				label Yes
+				input(type="radio", name="realName", value="0" checked=realName=="no").form-control
+				label No
+				label Where
+				input(name='location', type='text' placeholder='City, State, Country' style="margin-bottom: 10px; resize: vertical;").form-control
+				label Age
 				input(name='age', type='text' placeholder='Age' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='email', type='text' placeholder='Email' style="margin-bottom: 10px; resize: vertical;").form-control
+				label Email
+				input(name='email', type='text' placeholder='Just in case I have questions' style="margin-bottom: 10px; resize: vertical;").form-control
+				label Your five things...
+				label 1
 				input(name='thing1', type='text' placeholder='1?' style="margin-bottom: 10px; resize: vertical;").form-control
+				label 2
 				input(name='thing2', type='text' placeholder='2?' style="margin-bottom: 10px; resize: vertical;").form-control
+				label 3
 				input(name='thing3', type='text' placeholder='3?' style="margin-bottom: 10px; resize: vertical;").form-control
+				label 4
 				input(name='thing4', type='text' placeholder='4?' style="margin-bottom: 10px; resize: vertical;").form-control
-				input(name='thing5', type='text' placeholder='5?' style="margin-bottom: 10px; resize: vertical;").form-control
-				
+				label 5
+				input(name='thing5', type='text' placeholder='5?' style="margin-bottom: 10px; resize: vertical;").form-control				
 				button(type='submit').btn.btn-primary Post Submission
 				
 

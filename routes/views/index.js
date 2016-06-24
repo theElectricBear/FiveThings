@@ -1,6 +1,5 @@
 var keystone = require('keystone'),
 	async = require('async'),
-	Post = keystone.list('Post'),
 	PostComment = keystone.list('PostComment'),
 	Submission = keystone.list('Submission');
 
@@ -14,8 +13,7 @@ exports = module.exports = function (req, res) {
 	locals.section = 'home';
 
 	locals.data = {
-		posts: [],
-		submissions: [],
+		submissions: []
 	};
 
 	// Load the submissions
@@ -23,11 +21,10 @@ exports = module.exports = function (req, res) {
 		Submission
 		.paginate({
 			page: req.query.page || 1,
-				perPage: 10,
-				maxPages: 10,
+				perPage: 3,
 		})
 		.where('state', 'published')
-		.sort('-publishedDate')
+		.sort('-publishedOn')
 		.exec(function (err, results) {
 			locals.data.submissions = results;
 			console.log(locals.data.submissions);
@@ -53,7 +50,7 @@ exports = module.exports = function (req, res) {
 			if (err) {
 				validationErrors = err.errors;
 			} else {
-				req.flash('success', 'Your Submission was added.');
+				return res.redirect('/');
 			}
 			next();
 		});

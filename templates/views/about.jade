@@ -1,77 +1,12 @@
 extends ../layouts/default
 
-include ../mixins/commenting
-include ../mixins/submissions
-
-
 
 block content
 	.container: .jumbotron
 		//-submissions
 		.container: .row
-			section.col-sm-6.submission
-				.header
-				+submission-form()
-			section.col-sm-6.results
-				.header
-				if data.submissions.results.length
-					if data.submissions.totalPages > 1
-						h4.text-weight-normal Showing 
-							strong #{data.submissions.first}
-							|  to 
-							strong #{data.submissions.last}
-							|  of 
-							strong #{data.submissions.total}
-							|  submissions.
-					else
-						h4.text-weight-normal Showing #{utils.plural(data.submissions.results.length, '* submission')}.
-				each submission in data.submissions.results
-					+submission(submission)
-				if data.submissions.totalPages > 1
-					ul.pagination
-						if data.submissions.previous
-							li: a(href='?page=' + data.submissions.previous): span.glyphicon.glyphicon-chevron-left
-						else
-							li.disabled: a(href='?page=' + 1): span.glyphicon.glyphicon-chevron-left
-						each p, i in data.submissions.pages
-							li(class=data.submissions.currentPage == p ? 'active' : null)
-								a(href='?page=' + (p == '...' ? (i ? data.submissions.totalPages : 1) : p ))= p
-						if data.submissions.next
-							li: a(href='?page=' + data.submissions.next): span.glyphicon.glyphicon-chevron-right
-						else
-							li.disabled: a(href='?page=' + data.submissions.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
-				
+			p 	Helvetica salvia kitsch photo booth, pug chia umami twee you probably haven't heard of them vice. PBRB gochujang offal, authentic selfies quinoa blue bottle letterpress veniam flexitarian venmo artisan. Freegan brunch selfies, helvetica brooklyn master cleanse authentic health goth fashion axe wolf forage cray affogato occupy. Bicycle rights nulla elit keytar. 90's in tofu ullamco. Mumblecore elit listicle brooklyn officia salvia chicharrones meditation. Nostrud ennui veniam craft beer, polaroid ramps qui et fanny pack slow-carb selvage YOLO.
 
-block js
-	script.
-		jQuery(function($) {
-			
-			var comments = $('#comments');
-			var input = $('.comment-field-input');
-			var submit = comments.find('button[type=submit]');
-
-			
-			// Scroll to comments and focus input field
-			function scrollToComments(e) {
+			p 	Marfa do drinking vinegar, aliqua locavore 8-bit chillwave cupidatat. Pitchfork mlkshk cronut, wolf austin 3 wolf moon whatever ex pug tacos yr cliche pinterest. Consequat kitsch scenester banjo, tumblr cupidatat tote bag fanny pack hella nostrud truffaut blog ugh. Salvia ugh sunt trust fund mixtape cliche, officia accusamus commodo literally deep v. 3 wolf moon officia humblebrag fashion axe, aliquip nulla you probably haven't heard of them lo-fi bespoke PBRB non. Squid next level mollit, sunt thundercats iPhone flexitarian blog quis marfa laborum tilde. Retro bushwick heirloom, letterpress odio non quinoa franzen voluptate chartreuse green juice.
 				
-				e.preventDefault();
-				
-				$('html, body').animate({ scrollTop: comments.offset().top }, 250);
-				
-				input.eq(0).focus();
-			}
-			$('[href="#comments"]').click( scrollToComments );
-			
-			
-			
-			// Check if field has content: enable/disable submit. Disable by default
-			submit.attr('disabled','disabled');
-			input.keyup(function() {
-				if ($.trim($(this).val())) {
-					submit.removeAttr('disabled');
-				} else {
-					submit.attr('disabled','disabled');
-				}
-			});
-		});
 

@@ -41,5 +41,5 @@ PostComment.schema.pre('save', function (next) {
 
 
 PostComment.track = true;
-PostComment.defaultColumns = 'author, publishedOn, commentState';
+PostComment.defaultColumns = 'name, publishedOn, commentState';
 PostComment.register();
