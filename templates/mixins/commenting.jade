@@ -1,4 +1,4 @@
-mixin comment-form(action, id)
+mixin comment-form(action)
 	form(method='post', style="margin-bottom: 40px; margin-top: 40px;")
 		input(type='hidden', name='action', value='comment.create')
 		input(type='hidden', name='action', value=id)
@@ -29,4 +29,5 @@ mixin comment-modal()
 	#myModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
 		.modal-dialog
 			.modal-content
+				button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
 				+comment-form(action, 555666)

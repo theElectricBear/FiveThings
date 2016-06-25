@@ -5930,10 +5930,14 @@ section.results .header {
 
 .result_comments {
   float: left;
-  width: 50px;
+  background: url("/images/btn_comment.png");
+  width: 114px;
+  height: 26px;
   background-color: #333;
   color: #fff;
   padding-left: 20px; }
+  .result_comments:hover {
+    background-position: 0 -29px; }
 
 .cmntcnt {
   color: #555; }
