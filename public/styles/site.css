@@ -2303,6 +2303,13 @@ output {
   line-height: 1.42857;
   color: #555555; }
 
+.form-label {
+  display: inline-block;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857; }
+
 .form-control {
   display: inline-block;
   height: 34px;
@@ -5833,6 +5840,16 @@ section.submission {
   padding: 2.2em; }
   section.submission .header {
     background-image: url(/images/submission_header.png); }
+  section.submission form p {
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.42857; }
+    section.submission form p:first-of-type {
+      display: inline-block; }
+    section.submission form p:last-of-type {
+      clear: both; }
   section.submission form p:first-of-type {
     display: inline-block; }
   section.submission form p:last-of-type {
@@ -5840,6 +5857,8 @@ section.submission {
   section.submission form input[type=text] {
     margin-bottom: 10px;
     resize: vertical; }
+  section.submission form input[type=radio] {
+    height: 14px; }
 
 section.results .header {
   background-image: url(/images/results_header.png); }
