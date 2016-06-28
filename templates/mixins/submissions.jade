@@ -5,7 +5,7 @@ mixin submission-form(action)
 			.media-body
 				label(for='name' class="col-sm-2").form-label
 					| Name
-				input(name='name' type='text' class="col-sm-10" placeholder='We can be on a first name basis.').form-control
+				input(name='name' type='text' class="col-sm-10" placeholder='We can be on a first name basis...').form-control
 				br
 				p 
 					| Is this your real name?
@@ -22,7 +22,7 @@ mixin submission-form(action)
 				br
 				label(for='age' class="col-sm-2").form-label
 					| Age
-				input(name='age' type='text' class="col-sm-10" placeholder='Age').form-control
+				input(name='age' type='text' class="col-sm-10").form-control
 				br
 				label(for='email' class="col-sm-2").form-label
 					| Email
@@ -50,8 +50,8 @@ mixin submission-form(action)
 					| 5
 				input(name='thing5' type='text' class="col-sm-10").form-control				
 
-				button(type='submit').btn.btn-primary 
-					| Post Submission
+				button(type='submit')
+					| submit
 				
 
 mixin submission(submission, comments)
@@ -68,8 +68,9 @@ mixin submission(submission, comments)
 						a(href="#2")
 					li.plus 
 						a(href="#3")
-				a.result_leave_comment(href="#myModal", data-toggle="modal" data-submission="#{submission.id}")
-				p.comment-count 
+				a.result_leave_comment(href="#myModal", data-toggle="modal" data-submission="#{submission.id}").pull-right
+					| leave a comment
+				p.comment-count.pull-right
 				| comments: #{comments}
 		div.result_location #{submission.location}
 		div.result_answers

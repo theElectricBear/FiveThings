@@ -5818,13 +5818,13 @@ button.close {
         background-image: url(/images/btn_nav_about.png);
         background-position: left top;
         margin-right: 17px; }
-        #header .navbar .navbar-nav li:first-of-type:hover {
+        #header .navbar .navbar-nav li:first-of-type:hover, #header .navbar .navbar-nav li:first-of-type.active {
           background-position: left bottom; }
       #header .navbar .navbar-nav li:last-of-type {
         background-image: url(/images/btn_nav_home.png);
         background-position: right top;
         margin-left: 17px; }
-        #header .navbar .navbar-nav li:last-of-type:hover {
+        #header .navbar .navbar-nav li:last-of-type:hover, #header .navbar .navbar-nav li:last-of-type.active {
           background-position: left bottom; }
 
 section .header {
@@ -5859,6 +5859,21 @@ section.submission {
     resize: vertical; }
   section.submission form input[type=radio] {
     height: 14px; }
+  section.submission form button {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center 0px;
+    border: none;
+    width: 114px;
+    height: 26px;
+    text-indent: -9999px;
+    background-color: #333;
+    padding-left: 20px;
+    background-image: url("/images/btn_submit.png");
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translate(-50%, 0); }
 
 section.results .header {
   background-image: url(/images/results_header.png); }
@@ -5880,7 +5895,8 @@ section.results .header {
 .result_header {
   height: 50px;
   background-image: url(/images/blog_rule.png);
-  background-repeat: repeat-x;
+  background-repeat: no-repeat;
+  background-size: auto;
   padding-bottom: 20px; }
 
 .result_name {
@@ -5923,12 +5939,15 @@ section.results .header {
 
 .result_leave_comment {
   display: inline-block;
-  background: url("/images/btn_comment.png");
+  background-repeat: no-repeat;
+  background-position: center 0px;
+  border: none;
   width: 114px;
   height: 26px;
+  text-indent: -9999px;
   background-color: #333;
-  color: #fff;
-  padding-left: 20px; }
+  padding-left: 20px;
+  background-image: url("/images/btn_comment.png"); }
   .result_leave_comment:hover {
     background-position: 0 -29px; }
 

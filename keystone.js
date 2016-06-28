@@ -14,7 +14,7 @@ keystone.init({
 	'brand': '5Things',
 	'sass': 'public',
 	'static': 'public',
-	'favicon': 'public/favicon.ico',
+	'favicon': 'public/FiveThings.ico',
 	'views': ['templates', 'templates/views'],
 	'view engine': 'jade',
 

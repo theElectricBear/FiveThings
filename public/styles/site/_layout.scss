@@ -1,3 +1,14 @@
+@mixin button-base{
+	display:inline-block;
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	border: none;
+	width: 114px;
+	height: 26px;
+	text-indent: -9999px;
+	background-color: #333;
+	padding-left: 20px;
+}
 #header {
 	margin-top: 30px;
 	.navbar{
@@ -23,13 +34,13 @@
 					background-image: url(/images/btn_nav_about.png);
 					background-position: left top;
 					margin-right: 17px;
-					&:hover{background-position: left bottom;}
+					&:hover, &.active{background-position: left bottom;}
 				}
 				&:last-of-type{
 					background-image: url(/images/btn_nav_home.png);
 					background-position: right top;
 					margin-left: 17px;
-					&:hover{background-position: left bottom;}
+					&:hover, &.active{background-position: left bottom;}
 				}
 			}
 		}
@@ -67,6 +78,15 @@ section{
 			input[type=radio]{
 				height: 14px;
 			}
+			button{
+				@include button-base;
+				background-image: url('/images/btn_submit.png');
+				position: absolute;
+				left:50%;
+				bottom:5%;
+				transform: translate(-50%,0);
+				
+			}
 		}
 	}
 	&.results{
@@ -96,7 +116,8 @@ section{
 .result_header {
 	height: 50px;
 	background-image: url(/images/blog_rule.png);
-	background-repeat: repeat-x;
+	background-repeat: no-repeat;
+	background-size: auto;
 	padding-bottom: 20px;
 }
 
@@ -145,13 +166,8 @@ section{
 }
 
 .result_leave_comment {
-	display:inline-block;
-	background: url('/images/btn_comment.png');
-	width: 114px;
-	height: 26px;
-	background-color: #333;
-	color: #fff;
-	padding-left: 20px;
+	@include button-base;
+	background-image: url('/images/btn_comment.png');
 	&:hover{
 		background-position: 0 -29px;
 	}
