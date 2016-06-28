@@ -2304,8 +2304,7 @@ output {
   color: #555555; }
 
 .form-control {
-  display: block;
-  width: 100%;
+  display: inline-block;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
@@ -5834,6 +5833,13 @@ section.submission {
   padding: 2.2em; }
   section.submission .header {
     background-image: url(/images/submission_header.png); }
+  section.submission form p:first-of-type {
+    display: inline-block; }
+  section.submission form p:last-of-type {
+    clear: both; }
+  section.submission form input[type=text] {
+    margin-bottom: 10px;
+    resize: vertical; }
 
 section.results .header {
   background-image: url(/images/results_header.png); }

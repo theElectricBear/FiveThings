@@ -3,43 +3,53 @@ mixin submission-form(action)
 		input(type='hidden', name='action', value='submission.create')
 		.media
 			.media-body
-				label 
+				label(for='name' class="col-sm-2")
 					| Name
-				input(name='name', type='text' placeholder='We can be on a first name basis.' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='name' type='text' class="col-sm-10" placeholder='We can be on a first name basis.').form-control
+				br
 				p 
-					| Is this your real name?				
-				input(type="radio", name="realName", value="1" ).form-control
-				label 
-					| Yes
-				input(type="radio", name="realName", value="0" ).form-control
-				label 
+					| Is this your real name?
+				label(for='Yes')
+					| Yes				
+				input(type="radio" name="realName" value="1" ).form-control
+				label(for='no')
 					| No
-				label 
+				input(type="radio" name="realName" value="0" ).form-control
+				br
+				label(for='location' class="col-sm-2")
 					| Where
-				input(name='location', type='text' placeholder='City, State, Country' style="margin-bottom: 10px; resize: vertical;").form-control
-				label 
+				input(name='location' type='text' class="col-sm-10" placeholder='City, State, Country').form-control
+				br
+				label(for='age' class="col-sm-2")
 					| Age
-				input(name='age', type='text' placeholder='Age' style="margin-bottom: 10px; resize: vertical;").form-control
-				label 
+				input(name='age' type='text' class="col-sm-10" placeholder='Age').form-control
+				br
+				label(for='email' class="col-sm-2")
 					| Email
-				input(name='email', type='text' placeholder='Just in case I have questions' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='email' type='text' class="col-sm-10" placeholder='Just in case I have questions').form-control
+				br
 				p 
 					| Your five things...
-				label 
+				label(for='thing1' class="col-sm-2" )
 					| 1
-				input(name='thing1', type='text' placeholder='1?' style="margin-bottom: 10px; resize: vertical;").form-control
-				label 
+				input(name='thing1' type='text' class="col-sm-10" placeholder='1?').form-control
+				br
+				label(for='thing2' class="col-sm-2")
 					| 2
-				input(name='thing2', type='text' placeholder='2?' style="margin-bottom: 10px; resize: vertical;").form-control
-				label 
+				input(name='thing2' type='text' class="col-sm-10" placeholder='2?').form-control
+				br
+				label(for='thing3' class="col-sm-2")
 					| 3
-				input(name='thing3', type='text' placeholder='3?' style="margin-bottom: 10px; resize: vertical;").form-control
-				label 
+				input(name='thing3' type='text' class="col-sm-10" placeholder='3?').form-control
+				br
+				label(for='thing4' class="col-sm-2")
 					| 4
-				input(name='thing4', type='text' placeholder='4?' style="margin-bottom: 10px; resize: vertical;").form-control
-				label 
+				input(name='thing4' type='text' class="col-sm-10" placeholder='4?').form-control
+				br
+				label(for='thing5' class="col-sm-2")
 					| 5
-				input(name='thing5', type='text' placeholder='5?' style="margin-bottom: 10px; resize: vertical;").form-control
+				input(name='thing5' type='text' class="col-sm-10" placeholder='5?').form-control
+br
 
 				button(type='submit').btn.btn-primary 
 					| Post Submission

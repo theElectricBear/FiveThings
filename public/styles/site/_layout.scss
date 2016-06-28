@@ -49,6 +49,14 @@ section{
 		background-size: 100% 100%;
 		padding: 2.2em;
 		.header{background-image: url(/images/submission_header.png);}
+		form{
+			p:first-of-type{display: inline-block;}
+			p:last-of-type{clear:both;}
+			input[type=text]{
+				margin-bottom: 10px;
+				resize: vertical;
+			}
+		}
 	}
 	&.results{
 		.header{background-image: url(/images/results_header.png);}
