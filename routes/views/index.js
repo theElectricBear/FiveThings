@@ -28,7 +28,6 @@ exports = module.exports = function (req, res) {
 		.sort('-publishedOn')
 		.exec(function (err, results) {
 			locals.data.submissions = results;
-			console.log(locals.data.submissions);
 			next(err);
 		});
 	});
@@ -69,17 +68,17 @@ exports = module.exports = function (req, res) {
 
 	});
 
-	// Create a Submission
+	// Create a comment
 	view.on('post', { action: 'comment.create' }, function (next) {
 
-		var newSubmission = new Submission.model({
-			state: 'published'
+		var newComment = new Comment.model({
+			state: 'published',
 		});
 
-		var updater = newSubmission.getUpdateHandler(req);
+		var updater = newComment.getUpdateHandler(req);
 
 		updater.process(req.body, {
-			fields: ['name', 'realName', 'location', 'age', 'email', 'thing1', 'thing2', 'thing3', 'thing4', 'thing5'],
+			fields: ['comment', 'submission'],
 			flashErrors: true,
 			logErrors: true,
 		}, function (err) {

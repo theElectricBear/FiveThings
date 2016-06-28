@@ -1,10 +1,10 @@
 mixin comment-form(action)
-	form(method='post', style="margin-bottom: 40px; margin-top: 40px;")
+	form(method='post', id="commentForm", style="margin-bottom: 40px; margin-top: 40px;")
 		input(type='hidden', name='action', value='comment.create')
-		input(type='hidden', name='action', value=id)
-		input(name='content', type='text' placeholder='Comment here...' style="margin-bottom: 10px; resize: vertical;").form-control
+		input(name='comment', type='text' placeholder='Comment here...' style="margin-bottom: 10px; resize: vertical;").form-control
 
-		button(type='submit').btn.btn-primary Post Comment
+		button(type='submit').btn.btn-primary 
+			| Post Comment
 
 mixin comment-post(comment)
 	if comment.author
@@ -29,5 +29,6 @@ mixin comment-modal()
 	#myModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
 		.modal-dialog
 			.modal-content
-				button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
-				+comment-form(action, 555666)
+				button.close(type="button", data-dismiss="modal", aria-hidden="true") 
+					| &times;
+				+comment-form(action)

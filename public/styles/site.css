@@ -1058,7 +1058,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #777777;
+  color: #fff;
   background-color: #333333; }
 
 input,
@@ -2702,7 +2702,7 @@ select[multiple].input-lg,
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #b7b7b7; }
+  color: white; }
 
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -4294,38 +4294,6 @@ a.badge:hover, a.badge:focus {
   text-decoration: none;
   cursor: pointer; }
 
-.jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: transparent; }
-  .jumbotron h1,
-  .jumbotron .h1 {
-    color: inherit; }
-  .jumbotron p {
-    margin-bottom: 15px;
-    font-size: 21px;
-    font-weight: 200; }
-  .jumbotron > hr {
-    border-top-color: transparent; }
-  .container .jumbotron,
-  .container-fluid .jumbotron {
-    border-radius: 6px; }
-  .jumbotron .container {
-    max-width: 100%; }
-  @media screen and (min-width: 768px) {
-    .jumbotron {
-      padding-top: 0;
-      padding-bottom: 48px; }
-      .container .jumbotron,
-      .container-fluid .jumbotron {
-        padding-left: 60px;
-        padding-right: 60px; }
-      .jumbotron h1,
-      .jumbotron .h1 {
-        font-size: 63px; } }
-
 .thumbnail {
   display: block;
   padding: 4px;
@@ -4346,7 +4314,7 @@ a.badge:hover, a.badge:focus {
     margin-right: auto; }
   .thumbnail .caption {
     padding: 9px;
-    color: #777777; }
+    color: #fff; }
 
 a.thumbnail:hover,
 a.thumbnail:focus,
@@ -5928,15 +5896,15 @@ section.results .header {
 .result_answers ul li {
   list-style-type: none; }
 
-.result_comments {
-  float: left;
+.result_leave_comment {
+  display: inline-block;
   background: url("/images/btn_comment.png");
   width: 114px;
   height: 26px;
   background-color: #333;
   color: #fff;
   padding-left: 20px; }
-  .result_comments:hover {
+  .result_leave_comment:hover {
     background-position: 0 -29px; }
 
 .cmntcnt {

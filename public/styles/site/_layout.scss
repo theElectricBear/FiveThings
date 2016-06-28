@@ -125,8 +125,8 @@ section{
 	list-style-type: none;
 }
 
-.result_comments {
-	float: left;
+.result_leave_comment {
+	display:inline-block;
 	background: url('/images/btn_comment.png');
 	width: 114px;
 	height: 26px;
