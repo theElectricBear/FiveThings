@@ -47,7 +47,7 @@ exports = module.exports = function (req, res) {
 	// Create a Submission
 	view.on('post', { action: 'submission.create' }, function (next) {
 
-		var newComment = new Comment.model({
+		var newSubmission = new Submission.model({
 			state: 'published'
 		});
 
