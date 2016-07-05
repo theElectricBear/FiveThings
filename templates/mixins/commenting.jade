@@ -1,7 +1,7 @@
 mixin comment-form(action)
 	form(method='post', id="commentForm", style="margin-bottom: 40px; margin-top: 40px;")
 		input(type='hidden', name='action', value='comment.create')
-		input(name='comment', type='text' placeholder='Comment here...' style="margin-bottom: 10px; resize: vertical;").form-control
+		input(name='comment', type='textbox' placeholder='Comment here...' style="margin-bottom: 10px; resize: vertical;").form-control
 
 		button(type='submit').btn.btn-primary 
 			| Post Comment
@@ -21,14 +21,22 @@ mixin comment-post(comment)
 					p=comment.content.replace(/\n/g, '<br>')
 
 mixin comment-thread(comments)
-	if comments.length
-		for comment in comments
-			+comment-post(comment)
+	p
+		| words words words
+	//- if comments.length
+	//- 	for comment in comments
+	//- 		+comment-post(comment)
 
 mixin comment-modal()
-	#myModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+	#commentModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="commentModalLabel", aria-hidden="true")
 		.modal-dialog
 			.modal-content
 				button.close(type="button", data-dismiss="modal", aria-hidden="true") 
 					| &times;
 				+comment-form(action)
+mixin comments-modal()
+	#commentsModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="commentsModalLabel", aria-hidden="true")
+		.modal-dialog
+			.modal-content
+				button.close(type="button", data-dismiss="modal", aria-hidden="true") 
+					| &times;

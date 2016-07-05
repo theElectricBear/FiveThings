@@ -38,7 +38,6 @@ exports = module.exports = function (req, res) {
 		.sort('-publishedOn')
 		.exec(function (err, results) {
 			locals.data.comments = results;
-			console.log(locals.data.comments);
 			next(err);
 		});
 	});

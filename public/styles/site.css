@@ -5875,14 +5875,26 @@ section.submission {
     bottom: 5%;
     transform: translate(-50%, 0); }
 
-section.results .header {
-  background-image: url(/images/results_header.png); }
+section.results {
+  padding: 2.2em 2.2em 0; }
+  section.results .header {
+    background-image: url(/images/results_header.png); }
+
+section .pagination {
+  list-style-type: none; }
+  section .pagination li {
+    color: #fff; }
 
 #footer {
   margin-top: 30px;
   border-top: 1px solid #eeeeee;
   padding-top: 30px;
   color: #777777; }
+
+.modal-content {
+  background-color: #333; }
+  .modal-content button.close {
+    color: #fff; }
 
 /*-----------------------------------------------------------------------------------*/
 /*	14.	Survey Results
@@ -5916,12 +5928,15 @@ section.results .header {
   text-decoration: none; }
 
 .result_social {
-  float: right;
   background-color: #333;
   height: 16px;
   display: inline-block;
-  color: #fff;
-  /* 	padding-left: 10px; */ }
+  color: #fff; }
+  .result_social a {
+    color: #fff;
+    padding-left: 1.4em; }
+    .result_social a:hover {
+      text-decoration: none; }
 
 .result_location {
   clear: both;
@@ -5953,6 +5968,14 @@ section.results .header {
 
 .cmntcnt {
   color: #555; }
+
+.results_pagination {
+  margin-top: 3.2em;
+  padding-left: 0; }
+  .results_pagination li {
+    display: inline-block; }
+    .results_pagination li a {
+      color: #fff; }
 
 /*-----------------------------------------------------------------------------------*/
 /*	15.Sprites
@@ -6045,7 +6068,6 @@ section.results .header {
 .sclnav {
   width: 80px;
   height: 16px;
-  margin: 10px auto;
   padding: 0;
   position: relative; }
 
