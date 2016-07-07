@@ -44,21 +44,28 @@ block content
 					each p, i in data.submissions.pages
 						li(class=data.submissions.currentPage == p ? 'active' : null)
 							a(href='?page=' + (p == '...' ? (i ? data.submissions.totalPages : 1) : p ))= p
-	+comment-modal()
-	+comments-modal()
+	#pageModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="commentModalLabel", aria-hidden="true")
+		.modal-dialog
+			.modal-content
+				button.close(type="button", data-dismiss="modal", aria-hidden="true") 
+					| &times;
+				+comment-form(action)
+				+comments()
 
 block js
 	script.
 		jQuery(function($) {
 			var comments = !{JSON.stringify(data.comments)};
-			var commentsContent = $('#commentsModal .modal-content');
 
 			var commentBtn = $('.result_leave_comment');
 			var commentForm = $('#commentForm');
 			var commentsBtn = $('.result_comments');
+			var commentsThread = $('#pageModal .modal-content .comments-thread');
 
 			commentBtn.click(function(){
 				var subId = $(this).data('submission');
+				commentForm.show(),
+				commentsThread.hide()
 				$('<input>').attr({
 				    type: 'hidden',
 				    value: subId,
@@ -68,11 +75,12 @@ block js
 			
 			commentsBtn.click(function(){
 				var subId = $(this).data('submission');
-				console.dir(comments);
+				commentForm.hide(),
+				commentsThread.html('');
+				commentsThread.show()
 				for (i = 0; i < comments.length; i++) { 
 				    if(comments[i].submission == subId){
-				    	console.log(comments[i].comment);
-				    	commentsContent.append("<p>" + comments[i].comment + "</p><hr />");
+				    	commentsThread.append("<p>" + comments[i].comment + "</p><hr />");
 				    };
 				}
 			});

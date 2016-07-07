@@ -1,10 +1,14 @@
 mixin comment-form(action)
-	form(method='post', id="commentForm", style="margin-bottom: 40px; margin-top: 40px;")
-		input(type='hidden', name='action', value='comment.create')
-		input(name='comment', type='textbox' placeholder='Comment here...' style="margin-bottom: 10px; resize: vertical;").form-control
+	.form
+		form(method='post', id="commentForm", style="margin-bottom: 40px; margin-top: 40px;")
+			input(type='hidden', name='action', value='comment.create')
+			input(name='comment', type='text' placeholder='Comment here...' style="margin-bottom: 10px; resize: vertical;").form-control.textbox
 
-		button(type='submit').btn.btn-primary 
-			| Post Comment
+			button(type='submit').submitBtn 
+				| Submit
+
+mixin comments()
+	.comments-thread
 
 mixin comment-post(comment)
 	if comment.author
@@ -27,16 +31,3 @@ mixin comment-thread(comments)
 	//- 	for comment in comments
 	//- 		+comment-post(comment)
 
-mixin comment-modal()
-	#commentModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="commentModalLabel", aria-hidden="true")
-		.modal-dialog
-			.modal-content
-				button.close(type="button", data-dismiss="modal", aria-hidden="true") 
-					| &times;
-				+comment-form(action)
-mixin comments-modal()
-	#commentsModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="commentsModalLabel", aria-hidden="true")
-		.modal-dialog
-			.modal-content
-				button.close(type="button", data-dismiss="modal", aria-hidden="true") 
-					| &times;

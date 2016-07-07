@@ -78,15 +78,6 @@ section{
 			input[type=radio]{
 				height: 14px;
 			}
-			button{
-				@include button-base;
-				background-image: url('/images/btn_submit.png');
-				position: absolute;
-				left:50%;
-				bottom:5%;
-				transform: translate(-50%,0);
-				
-			}
 		}
 	}
 	&.results{
@@ -108,10 +99,28 @@ section{
 }
 .modal-content{
 	background-color: #333;
+	padding:2em;
 	button.close{
 		color:#fff;
-		
+		position:relative;
+		top:-1em;
 	}
+}
+
+#commentForm{
+	.textbox{
+		width:100%;
+		height:6em;
+	}
+}
+button.submitBtn{
+	@include button-base;
+	background-image: url('/images/btn_submit.png');
+	position: absolute;
+	left:50%;
+	bottom:5%;
+	transform: translate(-50%,0);
+	
 }
 
 
