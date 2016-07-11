@@ -5800,35 +5800,38 @@ body {
 
 #header {
   margin-top: 30px; }
-  #header .navbar .navbar-header {
-    background-image: url(/images/header.png);
+  #header .navbar .navbar-header > span {
     background-repeat: no-repeat;
-    background-size: auto 100%;
-    text-indent: -9999px; }
+    text-indent: -9999px;
+    background-size: contain;
+    display: inline-block; }
+  #header .navbar .navbar-header > span:first-of-type {
+    background-image: url(/images/header1.png); }
+  #header .navbar .navbar-header > span:last-of-type {
+    background-image: url(/images/header2.png); }
   #header .navbar .navbar-nav {
     background-image: url(/images/btn_nav_divider.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 100%;
-    width: 102px;
+    width: 110px;
     height: 18px; }
     #header .navbar .navbar-nav li {
       text-indent: -9999px;
       background-repeat: no-repeat;
       height: 100%;
-      width: 34px; }
+      width: 46%;
+      display: inline-block; }
       #header .navbar .navbar-nav li:first-of-type {
         background-image: url(/images/btn_nav_about.png);
-        background-position: left top;
-        margin-right: 17px; }
+        background-position: left top; }
         #header .navbar .navbar-nav li:first-of-type:hover, #header .navbar .navbar-nav li:first-of-type.active {
           background-position: left bottom; }
       #header .navbar .navbar-nav li:last-of-type {
         background-image: url(/images/btn_nav_home.png);
-        background-position: right top;
-        margin-left: 17px; }
+        background-position: right top; }
         #header .navbar .navbar-nav li:last-of-type:hover, #header .navbar .navbar-nav li:last-of-type.active {
-          background-position: left bottom; }
+          background-position: right bottom; }
 
 section .header {
   height: 3em;
@@ -5840,14 +5843,27 @@ section.submission {
   background-image: url(/images/survey_box.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  padding: 2.2em; }
+  padding: 2.2em 2.2em 5.2em; }
   section.submission .header {
     background-image: url(/images/submission_header.png); }
-  section.submission form .form-control:focus {
-    border-color: red;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139, 0, 0, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139, 0, 0, 0.6); }
+  section.submission form .form-control {
+    display: inline-block;
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+    section.submission form .form-control .form-control:focus {
+      border-color: red;
+      outline: 0;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139, 0, 0, 0.6);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139, 0, 0, 0.6); }
   section.submission form p {
     height: 34px;
     padding: 6px 12px;
@@ -5883,7 +5899,8 @@ section .results_pagination {
   section .results_pagination li {
     display: inline-block; }
     section .results_pagination li a {
-      color: #fff; }
+      color: #fff;
+      margin: 0em 0.2em; }
 
 #footer {
   margin-top: 30px;
@@ -5943,6 +5960,7 @@ li.active a {
   font-size: 1.2em;
   font-family: sans-serif;
   font-weight: lighter;
+  text-transform: capitalize;
   padding-top: .2em;
   padding-right: 10px; }
 
@@ -5963,6 +5981,7 @@ li.active a {
       text-decoration: none; }
 
 .result_location {
+  text-transform: capitalize;
   clear: both;
   padding-top: .2em;
   background-color: #333;
@@ -5972,6 +5991,11 @@ li.active a {
   width: 100%;
   background-color: #333;
   color: #fff; }
+  .result_answers ul {
+    padding-left: 0px; }
+    @media only screen and (min-width: 768px) {
+      .result_answers ul {
+        padding-left: 0px; } }
 
 .result_answers ul li {
   list-style-type: none; }
@@ -6004,25 +6028,6 @@ a.comment-count.result_comments {
 /*-----------------------------------------------------------------------------------*/
 /*	15.Sprites
 /*-----------------------------------------------------------------------------------*/
-#nav {
-  width: 103px;
-  height: 18px;
-  background: url("/images/btn_about_home.png") top left;
-  margin: 10px auto;
-  padding: 0;
-  position: relative; }
-
-#nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  position: absolute;
-  top: 0; }
-
-#nav li, #nav a {
-  height: 18px;
-  display: block; }
-
 #abt {
   left: 0px;
   width: 35px; }
@@ -6094,8 +6099,7 @@ a.comment-count.result_comments {
   height: 16px;
   padding: 0;
   position: relative;
-  display: block;
-  margin: 0 auto 1em; }
+  display: block; }
 
 .sclnav li {
   display: inline-block;

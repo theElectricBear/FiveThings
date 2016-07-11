@@ -8,12 +8,11 @@ include ../mixins/submissions
 block content
 	//-submissions
 	.container: .row
-		section.col-sm-12.col-sm-6.col-md-4.submission
+		section.col-xs-12.col-sm-5.col-md-4.submission
 			.header
-			p 
-				| Please tell me five things about yourself thatyou like. I can't time you, but I'd prefer if youdid this in under a minute. Life is busy.
+			p Please tell me five things about yourself thatyou like. I can't time you, but I'd prefer if youdid this in under a minute. Life is busy.
 			+submission-form()
-		section.col-xs-12.col-sm-7.col-sm-offset-1.results
+		section.col-xs-12.col-sm-7.col-md-offset-1.results
 			.header
 			if data.submissions.results.length
 				if data.submissions.totalPages > 1

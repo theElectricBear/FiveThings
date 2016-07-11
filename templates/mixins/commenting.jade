@@ -2,7 +2,7 @@ mixin comment-form(action)
 	.form
 		form(method='post', id="commentForm", style="margin-bottom: 40px; margin-top: 40px;")
 			input(type='hidden', name='action', value='comment.create')
-			input(name='comment', type='text' placeholder='Comment here...' style="margin-bottom: 10px; resize: vertical;").form-control.textbox
+			textarea(name='comment', type='text' placeholder='Comment here...' style="margin-bottom: 10px; resize: vertical;").form-control.textbox
 
 			button(type='submit').submitBtn 
 				| Submit
