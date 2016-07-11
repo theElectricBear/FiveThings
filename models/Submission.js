@@ -11,7 +11,7 @@ var Submission = new keystone.List('Submission', {
 });
 
 Submission.add({
-	name: { type: String, initial: true, index: true },
+	name: { type: String, initial: true, index: true},
 	realName: { type: Types.Select, numeric: true, options: [{ value: 1, label: 'Yes' }, { value: 0, label: 'No' }], index: true },
 	location: { type: String, initial: true, index: true },
 	age: { type: String, initial: true, index: true },

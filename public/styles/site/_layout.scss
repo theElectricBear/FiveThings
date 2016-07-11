@@ -1,9 +1,12 @@
+body{
+	font-family: Arial, sans-serif;
+}
 @mixin button-base{
 	display:inline-block;
 	background-repeat: no-repeat;
 	background-position: center 0px;
 	border: none;
-	width: 114px;
+	width: 116px;
 	height: 26px;
 	text-indent: -9999px;
 	background-color: #333;
@@ -51,7 +54,7 @@ section{
 		height: 3em;
 		width: 100%;
 		background-repeat:no-repeat;
-		background-size:auto 100%;
+		background-size:contain;
 	}
 	&.submission{
 		background-image: url(/images/survey_box.png);
@@ -60,6 +63,12 @@ section{
 		padding: 2.2em;
 		.header{background-image: url(/images/submission_header.png);}
 		form{
+			.form-control:focus{
+				border-color: red;
+			    outline: 0;
+			    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139,0,0, 0.6);
+			    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139,0,0, 0.6);
+			}
 			p{
 				height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
 				padding: $padding-base-vertical $padding-base-horizontal;
@@ -83,11 +92,18 @@ section{
 	&.results{
 		padding: 2.2em 2.2em 0;
 		.header{background-image: url(/images/results_header.png);}
+		.result{
+			padding-bottom: 1em;
+		}
 	}
-	.pagination {
+	.results_pagination{
+		margin-top: 3.2em;
+		padding-left:0;
 		list-style-type: none;
+		font-size: 12px;
 		li{
-			color:#fff;
+			display:inline-block;
+			a{color:#fff;}
 		}
 	}	
 }
@@ -122,6 +138,7 @@ button.submitBtn{
 	transform: translate(-50%,0);
 	
 }
+li.active a{text-decoration: underline;}
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -137,11 +154,10 @@ button.submitBtn{
 }
 
 .result_header {
-	height: 50px;
 	background-image: url(/images/blog_rule.png);
 	background-repeat: no-repeat;
 	background-size: auto;
-	padding-bottom: 20px;
+	background-position: 70px 0px;
 }
 
 .result_name {
@@ -164,8 +180,7 @@ button.submitBtn{
 
 .result_social {
 	background-color: #333;
-	height: 16px;
-	display:inline-block;
+	display:block;
 	color: #fff;
 	a{
 		color: #fff;
@@ -192,24 +207,22 @@ button.submitBtn{
 }
 
 .result_leave_comment {
+	padding-top: 1em;
+	display:block;
 	@include button-base;
 	background-image: url('/images/btn_comment.png');
 	&:hover{
 		background-position: 0 -29px;
 	}
 }
-
+a.comment-count.result_comments{
+	color:white;
+	text-decoration: none;
+	padding-top: 1em;
+	display:block;
+}
 .cmntcnt{
 	color: #555;
-}
-
-.results_pagination{
-	margin-top: 3.2em;
-	padding-left:0;
-	li{
-		display:inline-block;
-		a{color:#fff;}
-	}
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -277,9 +290,12 @@ button.submitBtn{
 
 
 .sclnav {
-    width: 80px; height: 16px; 
+    width: 80px; 
+    height: 16px; 
     padding: 0;
-    position: relative;}
+    position: relative;
+    display:block;
+}
       
 .sclnav li {
 	display:inline-block;

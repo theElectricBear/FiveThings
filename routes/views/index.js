@@ -58,6 +58,7 @@ exports = module.exports = function (req, res) {
 			logErrors: true,
 		}, function (err) {
 			if (err) {
+				console.log(err.errors);
 				validationErrors = err.errors;
 			} else {
 				return res.redirect('/');

@@ -1,53 +1,64 @@
 mixin submission-form(action)
-	form(method='post', style="margin-bottom: 40px;")
+	form(method='post', style="margin-bottom: 40px;" id="submissionForm")
 		input(type='hidden', name='action', value='submission.create')
 		.media
 			.media-body
 				label(for='name' class="col-sm-2").form-label
-					| Name
+					| Name 
+					span.error.hidden *
 				input(name='name' type='text' class="col-sm-9 col-sm-offset-1" placeholder='We can be on a first name basis...').form-control
 				br
 				p 
 					| Is this your real name?
 				label(for='Yes').form-label
 					| Yes				
+					span.error.hidden *
 				input(type="radio" name="realName" value="1" ).form-control
 				label(for='no').form-label
 					| No
+					span.error.hidden *
 				input(type="radio" name="realName" value="0" ).form-control
 				br
 				label(for='location' class="col-sm-2").form-label
 					| Where
+					span.error.hidden *
 				input(name='location' type='text' class="col-sm-9 col-sm-offset-1" placeholder='City, State, Country').form-control
 				br
 				label(for='age' class="col-sm-2").form-label
 					| Age
+					span.error.hidden *
 				input(name='age' type='text' class="col-sm-9 col-sm-offset-1").form-control
 				br
 				label(for='email' class="col-sm-2").form-label
 					| Email
+					span.error.hidden *
 				input(name='email' type='text' class="col-sm-9 col-sm-offset-1" placeholder='Just in case I have questions').form-control
 				br
 				p 
 					| Your five things...
 				label(for='thing1' class="col-sm-2" ).form-label
 					| 1
+					span.error.hidden *
 				input(name='thing1' type='text' class="col-sm-10").form-control
 				br
 				label(for='thing2' class="col-sm-2").form-label
 					| 2
+					span.error.hidden *
 				input(name='thing2' type='text' class="col-sm-10").form-control
 				br
 				label(for='thing3' class="col-sm-2").form-label
 					| 3
+					span.error.hidden *
 				input(name='thing3' type='text' class="col-sm-10").form-control
 				br
 				label(for='thing4' class="col-sm-2").form-label
 					| 4
+					span.error.hidden *
 				input(name='thing4' type='text' class="col-sm-10").form-control
 				br
 				label(for='thing5' class="col-sm-2").form-label
 					| 5
+					span.error.hidden *
 				input(name='thing5' type='text' class="col-sm-10").form-control
 
 				button(type='submit').submitBtn
@@ -55,23 +66,10 @@ mixin submission-form(action)
 				
 
 mixin submission(submission, cmntCnt)
-	div.result
-		if data
+	div.result.col-sm-9
 		div.result_header
 			div.result_name 
 				| #{submission.name}, #{submission.age}
-			div.result_social.col-sm-3.pull-right
-				ul.sclnav.pull-right
-					li.twit
-						a(href="#1")
-					li.fcbk
-						a(href="#2")
-					li.plus
-						a(href="#3")
-				a.result_leave_comment.pull-right(href="#pageModal", data-toggle="modal" data-submission="#{submission.id}")
-					| leave a comment
-				a.comment-count.result_comments(href="#pageModal", data-toggle="modal" data-submission="#{submission.id}")
-					| comments: #{submission.comments.length}
 		div.result_location #{submission.location}
 		div.result_answers
 			ul
@@ -85,3 +83,16 @@ mixin submission(submission, cmntCnt)
 					| 4. #{submission.thing4}
 				li 
 					| 5. #{submission.thing5}
+	div.col-sm-3
+		div.result_social
+			ul.sclnav
+				li.twit
+					a(href="#1")
+				li.fcbk
+					a(href="#2")
+				li.plus
+					a(href="#3")
+		a.result_leave_comment(href="#pageModal", data-toggle="modal" data-submission="#{submission.id}")
+			| leave a comment
+		a.comment-count.result_comments(href="#pageModal", data-toggle="modal" data-submission="#{submission.id}")
+			| comments: #{submission.comments.length}

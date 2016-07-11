@@ -5795,6 +5795,9 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+body {
+  font-family: Arial, sans-serif; }
+
 #header {
   margin-top: 30px; }
   #header .navbar .navbar-header {
@@ -5831,7 +5834,7 @@ section .header {
   height: 3em;
   width: 100%;
   background-repeat: no-repeat;
-  background-size: auto 100%; }
+  background-size: contain; }
 
 section.submission {
   background-image: url(/images/survey_box.png);
@@ -5840,6 +5843,11 @@ section.submission {
   padding: 2.2em; }
   section.submission .header {
     background-image: url(/images/submission_header.png); }
+  section.submission form .form-control:focus {
+    border-color: red;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139, 0, 0, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(139, 0, 0, 0.6); }
   section.submission form p {
     height: 34px;
     padding: 6px 12px;
@@ -5864,11 +5872,18 @@ section.results {
   padding: 2.2em 2.2em 0; }
   section.results .header {
     background-image: url(/images/results_header.png); }
+  section.results .result {
+    padding-bottom: 1em; }
 
-section .pagination {
-  list-style-type: none; }
-  section .pagination li {
-    color: #fff; }
+section .results_pagination {
+  margin-top: 3.2em;
+  padding-left: 0;
+  list-style-type: none;
+  font-size: 12px; }
+  section .results_pagination li {
+    display: inline-block; }
+    section .results_pagination li a {
+      color: #fff; }
 
 #footer {
   margin-top: 30px;
@@ -5893,7 +5908,7 @@ button.submitBtn {
   background-repeat: no-repeat;
   background-position: center 0px;
   border: none;
-  width: 114px;
+  width: 116px;
   height: 26px;
   text-indent: -9999px;
   background-color: #333;
@@ -5904,6 +5919,9 @@ button.submitBtn {
   bottom: 5%;
   transform: translate(-50%, 0); }
 
+li.active a {
+  text-decoration: underline; }
+
 /*-----------------------------------------------------------------------------------*/
 /*	14.	Survey Results
 /*-----------------------------------------------------------------------------------*/
@@ -5913,11 +5931,10 @@ button.submitBtn {
   padding-top: 10px; }
 
 .result_header {
-  height: 50px;
   background-image: url(/images/blog_rule.png);
   background-repeat: no-repeat;
   background-size: auto;
-  padding-bottom: 20px; }
+  background-position: 70px 0px; }
 
 .result_name {
   display: inline-block;
@@ -5937,8 +5954,7 @@ button.submitBtn {
 
 .result_social {
   background-color: #333;
-  height: 16px;
-  display: inline-block;
+  display: block;
   color: #fff; }
   .result_social a {
     color: #fff;
@@ -5961,11 +5977,13 @@ button.submitBtn {
   list-style-type: none; }
 
 .result_leave_comment {
+  padding-top: 1em;
+  display: block;
   display: inline-block;
   background-repeat: no-repeat;
   background-position: center 0px;
   border: none;
-  width: 114px;
+  width: 116px;
   height: 26px;
   text-indent: -9999px;
   background-color: #333;
@@ -5974,16 +5992,14 @@ button.submitBtn {
   .result_leave_comment:hover {
     background-position: 0 -29px; }
 
+a.comment-count.result_comments {
+  color: white;
+  text-decoration: none;
+  padding-top: 1em;
+  display: block; }
+
 .cmntcnt {
   color: #555; }
-
-.results_pagination {
-  margin-top: 3.2em;
-  padding-left: 0; }
-  .results_pagination li {
-    display: inline-block; }
-    .results_pagination li a {
-      color: #fff; }
 
 /*-----------------------------------------------------------------------------------*/
 /*	15.Sprites
@@ -6077,7 +6093,9 @@ button.submitBtn {
   width: 80px;
   height: 16px;
   padding: 0;
-  position: relative; }
+  position: relative;
+  display: block;
+  margin: 0 auto 1em; }
 
 .sclnav li {
   display: inline-block;

@@ -8,7 +8,7 @@ include ../mixins/submissions
 block content
 	//-submissions
 	.container: .row
-		section.col-xs-12.col-sm-4.submission
+		section.col-sm-12.col-sm-6.col-md-4.submission
 			.header
 			p 
 				| Please tell me five things about yourself thatyou like. I can't time you, but I'd prefer if youdid this in under a minute. Life is busy.
@@ -38,7 +38,7 @@ block content
 				+submission(submission)
 						
 			if data.submissions.totalPages > 1
-				ul.results_pagination
+				ul.results_pagination.col-xs-12
 					li
 						| page
 					each p, i in data.submissions.pages
@@ -53,6 +53,7 @@ block content
 				+comments()
 
 block js
+	script(src="/js/jquery.validate.min.js")
 	script.
 		jQuery(function($) {
 			var comments = !{JSON.stringify(data.comments)};
@@ -82,6 +83,38 @@ block js
 				    if(comments[i].submission == subId){
 				    	commentsThread.append("<p>" + comments[i].comment + "</p><hr />");
 				    };
+				}
+			});
+			$('#submissionForm').validate({ // initialize the plugin
+				rules: {
+					name: {
+						required: true
+					},
+					location: {
+						required: true
+					},
+					age: {
+						required: true
+					},
+					email: {
+						required: true,
+						email: true
+					},
+					thing1: {
+						required: true
+					},
+					thing2: {
+						required: true
+					},
+					thing3: {
+						required: true
+					},
+					thing4: {
+						required: true
+					},
+					thing5: {
+						required: true
+					}
 				}
 			});
 		});
