@@ -23,11 +23,11 @@ Submission.add({
 
 
 Submission.add('Five Things', {
-	thing1: { type: String},
-	thing2: { type: String},
-	thing3: { type: String},
-	thing4: { type: String},
-	thing5: { type: String}
+	thing1: { type:Types.Html},
+	thing2: { type:Types.Html},
+	thing3: { type:Types.Html},
+	thing4: { type:Types.Html},
+	thing5: { type:Types.Html}
 });
 
 Submission.schema.pre('save', function (next) {
