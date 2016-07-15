@@ -5798,6 +5798,9 @@ button.close {
 body {
   font-family: Arial, sans-serif; }
 
+a:focus {
+  outline: none; }
+
 #header {
   margin-top: 30px; }
   #header .navbar .navbar-header > span {

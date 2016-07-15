@@ -1,6 +1,9 @@
 body{
 	font-family: Arial, sans-serif;
 }
+a:focus{
+	outline: none;
+}
 @mixin button-base{
 	display:inline-block;
 	background-repeat: no-repeat;
