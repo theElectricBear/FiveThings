@@ -72,7 +72,5 @@ mixin submission(submission, cmntCnt)
 					a(href="ttps://www.facebook.com/sharer.php?u=<"+ url +">" target="_blank")
 				li.plus
 					a(href="https://plusone.google.com/_/+1/confirm?hl=en&url="+url  target="_blank")
-		a.result_leave_comment(href="#pageModal", data-toggle="modal" data-submission="#{submission.id}")
-			| leave a comment
-		a.comment-count.result_comments(href="#pageModal", data-toggle="modal" data-submission="#{submission.id}")
-			| comments: #{submission.comments.length}
+		a.result_leave_comment(href="#pageModal", data-toggle="modal" data-submission="#{submission.id}") leave a comment
+		a.comment-count.result_comments(href="#pageModal", data-toggle="modal" data-submission="#{submission.id}") comments: #{submission.comments.length}

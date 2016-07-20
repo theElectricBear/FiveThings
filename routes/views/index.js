@@ -10,11 +10,13 @@ exports = module.exports = function (req, res) {
 
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
+	- console.dir(req.rawHeaders[13]+req.originalUrl);
 	locals.section = 'home';
 
 	locals.data = {
 		submissions: [],
-		comments: []
+		comments: [],
+		pageUrl: '' 
 	};
 
 	// Load the submissions
