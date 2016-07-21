@@ -5,6 +5,7 @@ include ../mixins/submissions
 
 block content
 	//-submissions
+	- console.log(locals.pageUrl);
 	.container: .row
 		section.col-sm-6.col-md-4.submission
 			.header
@@ -29,7 +30,7 @@ block content
 					- if(comment.submission == submission.id)
 						- comments.push(comment.comment);
 				- submission['comments'] = comments;
-				+submission(submission)
+				+submission(submission,locals.pageUrl)
 						
 			if data.submissions.totalPages > 1
 				ul.results_pagination.col-xs-12
