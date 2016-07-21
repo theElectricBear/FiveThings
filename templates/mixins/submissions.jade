@@ -69,7 +69,7 @@ mixin submission(submission, url)
 				li.twit
 					a(href="https://twitter.com/share?url="+ url +"&text=This%20is%20five%20kinds%20of%20awesome:&count=none/" target="_blank")
 				li.fcbk
-					a(href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='"+ url +",'facebook-share-dialog','width=626,height=436');return false;" target="_blank")
+					a(href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436');return false;" target="_blank")
 				li.plus
 					a(href="https://plusone.google.com/_/+1/confirm?hl=en&url="+url  target="_blank")
 		a.result_leave_comment(href="#pageModal", data-toggle="modal" data-submission="#{submission.id}") leave a comment
